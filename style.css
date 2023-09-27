@@ -1,0 +1,106 @@
+*{
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+    --page-bg: #16041b;
+    --container-bg: #130317;
+    --objects-color: #f2e19c;
+    --text-color: #f1d2f9;
+    --compliment-color: #1acba8;
+}
+body{
+    background: var(--page-bg);
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+main{
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    position: relative;
+}
+section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--container-bg);
+}
+canvas{
+    width: 300px;
+    height: 300px;
+    border: 1px solid black;
+    background: var(--objects-color);
+    transition: 200s ease-in;
+    z-index: 100;
+    position: relative;
+}
+.about{
+    position: absolute;
+    left: 20%;
+    top: 30%;
+    transform: translate(-50%, -50%);
+}
+.about h1{
+    font-size: 2em;
+    font-weight: 700;
+    margin-bottom: .5em;
+    color: var(--compliment-color);
+}
+.about h3{
+    font-size: 1.2em;
+    font-weight: 400;
+    color: var(--objects-color);
+}
+.numbers-box{
+    overflow: hidden;
+}
+.box-input input[type=text]{
+    width: 40px;
+    height: 40px;
+    background: var(--objects-color);
+    box-shadow: .015px .035px .5px var(--page-bg);
+}
+.box-search{
+    margin: .5em auto;
+}
+.box-search input[type=submit]{
+    width: 100px;
+    height: 30px;
+    border: none;
+    background: var(--compliment-color);
+    box-shadow: .015px .035px .5px var(--compliment-color);
+}
+#analytics{
+    position: relative;
+}
+#analytics::before{
+    content: '';
+    width: 500px;
+    height: 500px;
+    position: absolute;
+    left: 10%;
+    top: 10%;
+    transform: translate(-50%, -50%);
+    background: var(--objects-color);
+    pointer-events: none;
+    opacity: .2;
+}
+#analytics::after{
+    content: '';
+    width: 500px;
+    height: 500px;
+    position: absolute;
+    left: 90%;
+    top: 90%;
+    transform: translate(-50%, -50%);
+    background: var(--objects-color);
+    pointer-events: none;
+    opacity: .2;
+}
+@media screen and (max-width=320) {
+    main{
+        grid-template-columns: 1fr;
+    }
+}
